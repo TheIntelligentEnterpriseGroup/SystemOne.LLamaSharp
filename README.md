@@ -7,7 +7,7 @@ A high-performance, deterministic routing engine for local AI models, built for 
 
 This library implements a "System One" architectural pattern. Instead of generating text autoregressively (which takes seconds), it extracts raw logits from a single parallel batch pass to determine the probability of specific categories. 
 
-This allows smaller models to execute deterministic classification in **< 100ms** while saving your VRAM for larger fallback generative models.
+This allows specialized smaller models to execute deterministic classification in **< 100ms** while saving your VRAM for larger fallback generative models.
 
 ## Features
 * **Instant Execution:** Bypass token-by-token generation for sub-100ms classification.
@@ -15,12 +15,14 @@ This allows smaller models to execute deterministic classification in **< 100ms*
 * **VRAM Safety:** Includes thread-locking and explicit `Unload()` memory management to prevent out-of-memory exceptions when hot-swapping models.
 
 ## Model Compatibility & Calibration
-This engine is built on standard `llama.cpp` logit extraction and works natively with any instruction-tuned causal language model (including **Llama 3, Qwen, Mistral, Phi, and Gemma**).
+While this engine is built on standard `llama.cpp` logit extraction and technically works natively with any instruction-tuned causal language model (including Llama 3, Qwen, Mistral, and Phi), **it is heavily optimized for use with purpose-built routing models.**
+
+**Recommended Model:** [Plumb-4B](https://huggingface.co/TheIntelligentEnterpriseGroup/Plumb-4B) is our specialized System One routing model, explicitly trained and calibrated for this engine.
 
 **Setting the Calibration Temperature:**
 The constructor accepts a `calibrationTemperature` parameter which adjusts the strictness of the Softmax probability distribution:
-* **`1.0f` (Standard):** Use this for general-purpose models like Qwen 2.5 or Llama 3.
 * **`2.07f` (Plumb Default):** The default temperature is specifically mathematically calibrated for the **Plumb-4B** routing model to align its raw logits with true statistical probability.
+* **`1.0f` (Standard):** Use this baseline if you are experimenting with general-purpose models like Qwen 2.5 or Llama 3 (though they are not optimized for strict triage tasks).
 
 ## Quick Start
 
