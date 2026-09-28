@@ -1,5 +1,8 @@
 # TIEG.SystemOne.LLamaSharp
 
+[![NuGet Version](https://img.shields.io/nuget/v/TIEG.SystemOne.LLamaSharp.svg?style=flat-square)](https://www.nuget.org/packages/TIEG.SystemOne.LLamaSharp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
+
 A high-performance, deterministic routing engine for local AI models, built for `LLamaSharp`. Developed by **The Intelligent Enterprise Group (TIEG)**.
 
 This library implements a "System One" architectural pattern. Instead of generating text autoregressively (which takes seconds), it extracts raw logits from a single parallel batch pass to determine the probability of specific categories. 
@@ -54,4 +57,13 @@ else
     Console.WriteLine("Routing to heavy fallback model...");
     // ... route to a heavy fallback model
 }
+```
+
+## Running the Example Project
+
+A complete, runnable tiered-routing pipeline demonstration is located in [`examples/TieredRoutingDemo`](examples/TieredRoutingDemo):
+
+```bash
+cd examples/TieredRoutingDemo
+dotnet run -- path/to/primary-model.gguf path/to/fallback-model.gguf
 ```

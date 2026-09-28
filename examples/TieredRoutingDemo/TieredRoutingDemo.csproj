@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Your published package -->
+    <PackageReference Include="TIEG.SystemOne.LLamaSharp" Version="1.0.0" />
+    
+    <!-- Logging dependencies -->
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="8.0.1" />
+
+    <!-- Default CPU runtime backend ensures the example runs on any hardware. -->
+    <!-- Swap this to LLamaSharp.Backend.Cuda12 (or Cuda11/Mac/Vulkan) for GPU acceleration. -->
+    <PackageReference Include="LLamaSharp.Backend.Cpu" Version="0.27.0" />
+  </ItemGroup>
+
+</Project>
