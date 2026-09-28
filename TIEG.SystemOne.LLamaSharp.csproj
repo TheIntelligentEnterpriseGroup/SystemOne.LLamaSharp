@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+
+    <!-- Package Identity & Branding -->
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>TIEG.SystemOne.LLamaSharp</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>The Intelligent Enterprise Group (TIEG), Z. Somogyi</Authors>
+    <Company>The Intelligent Enterprise Group</Company>
+    <Product>TIEG.SystemOne.LLamaSharp</Product>
+    <Copyright>(c) 2026, The Intelligent Enterprise Group</Copyright>
+
+    <!-- Marketing & Discovery -->
+    <Description>Sub-100ms deterministic decision routing and VRAM management for LLamaSharp. Developed by The Intelligent Enterprise Group (TIEG), this extension bypasses autoregressive token generation in favor of logit-based Softmax evaluation for instant classification.</Description>
+    <PackageTags>llama;llamasharp;system-one;routing;classification;ai;llm;vram;tieg</PackageTags>
+    <RepositoryUrl>https://github.com/theintelligententerprisegroup/SystemOne.LLamaSharp</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+
+    <!-- Licensing & Documentation -->
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LLamaSharp" Version="0.27.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.1" />
+  </ItemGroup>
+
+  <!-- Embeds the README into the NuGet package -->
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
