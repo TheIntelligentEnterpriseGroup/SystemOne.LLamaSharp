@@ -17,7 +17,7 @@ This allows specialized smaller models to execute deterministic classification i
 ## Model Compatibility & Calibration
 While this engine is built on standard `llama.cpp` logit extraction and technically works natively with any instruction-tuned causal language model (including Llama 3, Qwen, Mistral, and Phi), **it is heavily optimized for use with purpose-built routing models.**
 
-**Recommended Model:** [Plumb-4B](https://huggingface.co/TheIntelligentEnterpriseGroup/Plumb-4B) is our specialized System One routing model, explicitly trained and calibrated for this engine.
+**Recommended Model:** [Plumb-4B](https://huggingface.co/crh225/plumb-4b-GGUF) is our specialized System One routing model, explicitly trained and calibrated for this engine.
 
 **Setting the Calibration Temperature:**
 The constructor accepts a `calibrationTemperature` parameter which adjusts the strictness of the Softmax probability distribution:
