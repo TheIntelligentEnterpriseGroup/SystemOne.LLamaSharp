@@ -1,6 +1,7 @@
 # TIEG.SystemOne.LLamaSharp
 
 [![NuGet Version](https://img.shields.io/nuget/v/TIEG.SystemOne.LLamaSharp.svg?style=flat-square)](https://www.nuget.org/packages/TIEG.SystemOne.LLamaSharp)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/TIEG.SystemOne.LLamaSharp)](https://www.nuget.org/packages/TIEG.SystemOne.LLamaSharp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 
 A high-performance, deterministic routing engine for local AI models, built for `LLamaSharp`. Developed by **The Intelligent Enterprise Group (TIEG)**.
