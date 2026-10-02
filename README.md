@@ -4,7 +4,7 @@
 [![NuGet Downloads](https://img.shields.io/nuget/dt/TIEG.SystemOne.LLamaSharp?cacheBypass=2)](https://www.nuget.org/packages/TIEG.SystemOne.LLamaSharp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 
-A high-performance, deterministic routing engine for local AI models, built for `LLamaSharp`. Developed by **The Intelligent Enterprise Group (TIEG)**.
+A high-performance, deterministic routing engine for AI models, built for `LLamaSharp`. Developed by **The Intelligent Enterprise Group (TIEG)**.
 
 This library implements a "System One" architectural pattern. Instead of generating text autoregressively (which takes seconds), it extracts raw logits from a single parallel batch pass to determine the probability of specific categories. 
 
